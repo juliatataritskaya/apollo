@@ -1,0 +1,11 @@
+<div *ngFor="let post of posts | async">
+  <div class="card" style="width: 100%; margin-top: 10px">
+    <div class="card-body">
+      <h5 class="card-title">{{post.title}}</h5>
+      <p class="card-text">{{post.content}}</p>
+      <p>{{post.thumbnail}}</p>
+    </div>
+  </div>
+</div>
+
+<button (click)="newPost()">New</button>

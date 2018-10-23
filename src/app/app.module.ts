@@ -1,16 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './store/reducers/post';
 
 import { AppComponent } from './app.component';
 
+import { ListComponent } from './list/list.component';
+import { GraphQLModule } from './graphql.module';
+import { PostService } from './post.service';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    GraphQLModule,
+    StoreModule.forRoot({reducer})
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
